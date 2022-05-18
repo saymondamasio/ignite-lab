@@ -9,11 +9,6 @@ export default function Home() {
 export const  getServerSideProps: GetServerSideProps = async ({req, res}) => {
   const session = getSession(req, res)
 
-  const { accessToken } = await getAccessToken(req, res)
-  
-  console.log(accessToken);
-  
-
   if(!session) {
     return {
       redirect: {
